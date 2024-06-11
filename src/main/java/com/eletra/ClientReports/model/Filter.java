@@ -1,5 +1,6 @@
 package com.eletra.ClientReports.model;
 
+import com.eletra.ClientReports.Enum.FilterType;
 import jakarta.persistence.*;
 import java.util.Date;
 
@@ -32,17 +33,8 @@ public class Filter {
     @Column(name = "IsActive", nullable = false)
     private boolean isActive;
 
-    @Column(name = "IsInt", nullable = false)
-    private boolean isInt;
-
-    @Column(name = "IsStartDate", nullable = false)
-    private boolean isStartDate;
-
-    @Column(name = "IsEndDate", nullable = false)
-    private boolean isEndDate;
-
-    @Column(name = "IsText", nullable = false)
-    private boolean isText;
+    @Column(name = "Type", nullable = false)
+    private FilterType type;
 
     @Column(name = "UserCreate")
     private String userCreate;

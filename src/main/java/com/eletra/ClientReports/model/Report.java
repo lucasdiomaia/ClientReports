@@ -38,8 +38,8 @@ public class Report {
     @Column(name = "DisplayOrder", nullable = false)
     private int displayOrder;
 
-    @Column(name = "IsExportExcel", nullable = false)
-    private boolean isExportExcel;
+    @Column(name = "ExportType", nullable = false)
+    private int exportType;
 
     @Column(name = "Description", columnDefinition = "NVARCHAR(MAX)")
     private String description;
