@@ -14,7 +14,7 @@ CREATE INDEX idx_databases_name ON Databases (Name);
 -- Criação da tabela ReportStructure
 CREATE TABLE ReportStructure
 (
-    Id             INT PRIMARY KEY IDENTITY(1,1) not null ,
+    Id             INT PRIMARY KEY IDENTITY(1,1),
     DatabaseId     INT NOT NULL,
     TableName      NVARCHAR(255) NOT NULL,
     UpdatePriority INT,
@@ -29,7 +29,7 @@ CREATE INDEX idx_reportstructure_databaseid ON ReportStructure (DatabaseId);
 -- Criação da tabela MenuItems
 CREATE TABLE MenuItems
 (
-    Id           INT PRIMARY KEY IDENTITY(1,1) not null,
+    Id           INT PRIMARY KEY IDENTITY(1,1),
     ParentId     INT NULL,
     Name         NVARCHAR(255) NOT NULL,
     Level        INT NOT NULL,
