@@ -1,7 +1,7 @@
 -- Criação da tabela Databases
 CREATE TABLE Databases
 (
-    DatabaseID INT PRIMARY KEY IDENTITY(1,1),
+    Id INT PRIMARY KEY IDENTITY(1,1),
     Name       NVARCHAR(255) NOT NULL,
     IsActive   BIT NOT NULL DEFAULT 1,
     UserCreate NVARCHAR(255),
@@ -14,7 +14,7 @@ CREATE INDEX idx_databases_name ON Databases (Name);
 -- Criação da tabela ReportStructure
 CREATE TABLE ReportStructure
 (
-    ID             INT PRIMARY KEY IDENTITY(1,1),
+    Id             INT PRIMARY KEY IDENTITY(1,1) not null ,
     DatabaseId     INT NOT NULL,
     TableName      NVARCHAR(255) NOT NULL,
     UpdatePriority INT,
@@ -22,14 +22,14 @@ CREATE TABLE ReportStructure
     UserEdit       NVARCHAR(255),
     DateCreate     DATETIME,
     DateEdit       DATETIME,
-    FOREIGN KEY (DatabaseId) REFERENCES Databases (DatabaseID)
+    FOREIGN KEY (DatabaseId) REFERENCES Databases (Id)
 );
 CREATE INDEX idx_reportstructure_databaseid ON ReportStructure (DatabaseId);
 
 -- Criação da tabela MenuItems
 CREATE TABLE MenuItems
 (
-    Id           INT PRIMARY KEY IDENTITY(1,1),
+    Id           INT PRIMARY KEY IDENTITY(1,1) not null,
     ParentId     INT NULL,
     Name         NVARCHAR(255) NOT NULL,
     Level        INT NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE MenuItems
 -- Criação da tabela Report
 CREATE TABLE Report
 (
-    ID                INT PRIMARY KEY IDENTITY(1,1),
+    Id                INT PRIMARY KEY IDENTITY(1,1),
     MenuItemsId       INT NOT NULL,
     FilterId          INT,
     ReportStructureId INT NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE Report
     DateCreate        DATETIME,
     DateEdit          DATETIME,
     FOREIGN KEY (MenuItemsId) REFERENCES MenuItems (Id),
-    FOREIGN KEY (ReportStructureId) REFERENCES ReportStructure (ID)
+    FOREIGN KEY (ReportStructureId) REFERENCES ReportStructure (Id)
 );
 CREATE INDEX idx_report_menuitemsid ON Report (MenuItemsId);
 CREATE INDEX idx_report_reportstructureid ON Report (ReportStructureId);
@@ -70,7 +70,7 @@ CREATE INDEX idx_report_reportstructureid ON Report (ReportStructureId);
 -- Criação da tabela Filter
 CREATE TABLE Filter
 (
-    ID           INT PRIMARY KEY IDENTITY(1,1),
+    Id           INT PRIMARY KEY IDENTITY(1,1),
     ReportID     INT NOT NULL,
     Name         NVARCHAR(255) NOT NULL,
     Description  NVARCHAR(MAX),
@@ -82,6 +82,6 @@ CREATE TABLE Filter
     UserEdit     NVARCHAR(255),
     DateCreate   DATETIME,
     DateEdit   DATETIME,
-    FOREIGN KEY (ReportID) REFERENCES Report (ID)
+    FOREIGN KEY (ReportID) REFERENCES Report (Id)
 );
 CREATE INDEX idx_filter_reportid ON Filter (ReportID);

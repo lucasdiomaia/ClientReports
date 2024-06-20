@@ -34,7 +34,7 @@ public class Filter {
     private boolean isActive;
 
     @Column(name = "Type", nullable = false)
-    private FilterType type;
+    private Integer type;
 
     @Column(name = "UserCreate")
     private String userCreate;

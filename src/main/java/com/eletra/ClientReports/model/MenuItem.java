@@ -1,36 +1,37 @@
 package com.eletra.ClientReports.model;
 
 import jakarta.persistence.*;
-import java.util.Date;
+
+import java.time.LocalDateTime;
 
 @lombok.Getter
 @lombok.Setter
 @lombok.NoArgsConstructor
 @Entity
-@Table(name = "MenuItems")
+@Table(name = "menuitems")
 public class MenuItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    @Column(name = "ParentId")
+    @Column(name = "parentid")
     private Integer parentId;
 
-    @Column(name = "Name", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "Level", nullable = false)
-    private int level;
+    @Column(name = "level", nullable = false)
+    private Integer level;
 
     @Column(name = "DisplayOrder", nullable = false)
-    private int displayOrder;
+    private Integer displayOrder;
 
     @Column(name = "IsReport", nullable = false)
-    private boolean isReport;
+    private Boolean isReport;
 
     @Column(name = "IsActive", nullable = false)
-    private boolean isActive;
+    private Boolean isActive;
 
     @Column(name = "UserCreate")
     private String userCreate;
@@ -39,10 +40,10 @@ public class MenuItem {
     private String userEdit;
 
     @Column(name = "DateCreate")
-    private Date dateCreate;
+    private LocalDateTime dateCreate;
 
     @Column(name = "DateEdit")
-    private Date dateEdit;
+    private LocalDateTime dateEdit;
 
     @ManyToOne
     @JoinColumn(name = "ParentId", insertable = false, updatable = false)

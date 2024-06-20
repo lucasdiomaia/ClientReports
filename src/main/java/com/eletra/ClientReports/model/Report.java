@@ -1,66 +1,80 @@
 package com.eletra.ClientReports.model;
 
 import jakarta.persistence.*;
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
-@lombok.Getter
-@lombok.Setter
-@lombok.NoArgsConstructor
+import java.time.LocalDateTime;
+
 @Entity
-@Table(name = "Report")
+@Getter
+@Setter
+@Table(name = "report")
 public class Report {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "id")
+    private Integer id;
 
-    @Column(name = "MenuItemsId", nullable = false)
-    private int menuItemsId;
+    @Basic
+    @Column(name = "menuitemsid", nullable = false)
+    private Integer menuItemsId;
 
-    @Column(name = "FilterId")
+    @Basic
+    @Column(name = "filterid")
     private Integer filterId;
 
-    @Column(name = "ReportStructureId", nullable = false)
-    private int reportStructureId;
+    @Basic
+    @Column(name = "reportstructureid", nullable = false)
+    private Integer reportStructureId;
 
-    @Column(name = "Name", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "IsActivity", nullable = false)
-    private boolean isActivity;
+    @Basic
+    @Column(name = "isactivity", nullable = false)
+    private Boolean isActivity;
 
-    @Column(name = "IsVisibility", nullable = false)
-    private boolean isVisibility;
+    @Basic
+    @Column(name = "isvisibility", nullable = false)
+    private Boolean isVisibility;
 
-    @Column(name = "PriorityLevel", nullable = false)
-    private int priorityLevel;
+    @Basic
+    @Column(name = "prioritylevel", nullable = false)
+    private Integer priorityLevel;
 
-    @Column(name = "DisplayOrder", nullable = false)
-    private int displayOrder;
+    @Basic
+    @Column(name = "displayorder", nullable = false)
+    private Integer displayOrder;
 
-    @Column(name = "ExportType", nullable = false)
-    private int exportType;
+    @Basic
+    @Column(name = "exporttype", nullable = false)
+    private Integer exportType;
 
-    @Column(name = "Description", columnDefinition = "NVARCHAR(MAX)")
+    @Column(name = "description", columnDefinition = "NVARCHAR(MAX)")
     private String description;
 
-    @Column(name = "UserCreate")
+    @Basic
+    @Column(name = "usercreate")
     private String userCreate;
 
-    @Column(name = "UserEdit")
+    @Basic
+    @Column(name = "useredit")
     private String userEdit;
 
-    @Column(name = "DateCreate")
-    private Date dateCreate;
+    @Basic
+    @Column(name = "datecreate")
+    private LocalDateTime dateCreate;
 
-    @Column(name = "DateEdit")
-    private Date dateEdit;
+    @Basic
+    @Column(name = "dateedit")
+    private LocalDateTime dateEdit;
 
     @ManyToOne
-    @JoinColumn(name = "MenuItemsId", insertable = false, updatable = false)
+    @JoinColumn(name = "menuitemsid", insertable = false, updatable = false)
     private MenuItem menuItem;
 
     @ManyToOne
-    @JoinColumn(name = "ReportStructureId", insertable = false, updatable = false)
+    @JoinColumn(name = "reportstructureid", insertable = false, updatable = false)
     private ReportStructure reportStructure;
 }

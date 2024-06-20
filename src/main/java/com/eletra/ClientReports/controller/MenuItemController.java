@@ -31,22 +31,4 @@ public class MenuItemController {
         return ResponseEntity.ok(menuItems);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<MenuItem> getMenuItemById(@PathVariable int id) {
-        return menuItemService.findMenuItemById(id)
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<MenuItem> updateMenuItem(@PathVariable int id, @RequestBody MenuItem menuItemDetails) {
-        MenuItem updatedMenuItem = menuItemService.updateMenuItem(id, menuItemDetails.getName());
-        return ResponseEntity.ok(updatedMenuItem);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMenuItem(@PathVariable int id) {
-        menuItemService.deleteMenuItem(id);
-        return ResponseEntity.ok().build();
-    }
 }

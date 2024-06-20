@@ -14,8 +14,8 @@ public class ReportStructure {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "DatabaseId", nullable = false)
-    private int databaseId;
+    @Column(name = "Id", nullable = false)
+    private int Id;
 
     @Column(name = "TableName", nullable = false)
     private String tableName;

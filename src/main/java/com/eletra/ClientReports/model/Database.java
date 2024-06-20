@@ -12,7 +12,7 @@ public class Database {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int databaseId;
+    private int Id;
 
     @Column(name = "Name", nullable = false)
     private String name;

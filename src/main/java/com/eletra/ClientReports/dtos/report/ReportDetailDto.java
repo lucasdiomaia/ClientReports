@@ -6,7 +6,7 @@ import java.util.List;
 
 @Data
 public class ReportDetailDto {
-    private int id;
+    private Integer id;
     private String name;
     private List<FilterDto> filters;
 }
