@@ -9,5 +9,5 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public abstract class ReportMapper {
     public abstract ReportDto ToReportDto(Report report);
-    public abstract List<ReportDto> ToReportDtoList(List<Report> report);
+    public abstract List<ReportDto> ToReportDtoList(List<Report> reports);
 }

@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PaginatedResponseDto<T> {
+public class PaginatedResponseDto {
     private Object data;
     private int page;
     private int size;

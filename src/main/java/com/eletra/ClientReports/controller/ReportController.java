@@ -26,8 +26,8 @@ public class ReportController {
         return ResponseEntity.status(HttpStatus.OK).body(Reports);
     }
     @GetMapping("/paginated")
-    public ResponseEntity<PaginatedResponseDto<ReportDto>> getPaginatedReports(@RequestParam int page, @RequestParam int size) {
-        PaginatedResponseDto<ReportDto> reports = reportService.getAllReports(page, size);
+    public ResponseEntity<PaginatedResponseDto> getPaginatedReports(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "0") int size,@RequestParam(required = false) String filter) throws Exception {
+        PaginatedResponseDto reports = reportService.getAllReports(page, size,filter);
         return ResponseEntity.status(HttpStatus.OK).body(reports);
     }
 
