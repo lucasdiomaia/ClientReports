@@ -1,6 +1,6 @@
-package com.eletra.ClientReports.dtos.report;
+package com.eletra.ClientReports.models.dtos.report;
 
-import com.eletra.ClientReports.dtos.filter.FilterDto;
+import com.eletra.ClientReports.models.dtos.filter.FilterDto;
 import lombok.Data;
 import java.util.List;
 

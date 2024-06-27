@@ -1,12 +1,9 @@
-package com.eletra.ClientReports.dtos.page;
+package com.eletra.ClientReports.models.dtos.page;
 
 
-import com.eletra.ClientReports.dtos.report.ReportDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Data
 @NoArgsConstructor

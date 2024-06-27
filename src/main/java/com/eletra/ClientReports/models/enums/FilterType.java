@@ -1,4 +1,4 @@
-package com.eletra.ClientReports.Enum;
+package com.eletra.ClientReports.models.enums;
 
 public enum FilterType {
     Unknow,

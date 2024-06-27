@@ -1,6 +1,6 @@
 package com.eletra.ClientReports.util;
 
-import com.eletra.ClientReports.dtos.page.PaginatedResponseDto;
+import com.eletra.ClientReports.models.dtos.page.PaginatedResponseDto;
 import lombok.experimental.UtilityClass;
 import org.springframework.data.domain.Page;
 

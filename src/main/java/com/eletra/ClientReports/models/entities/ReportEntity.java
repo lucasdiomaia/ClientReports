@@ -1,4 +1,4 @@
-package com.eletra.ClientReports.model;
+package com.eletra.ClientReports.models.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Table(name = "report")
-public class Report {
+public class ReportEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -72,9 +72,9 @@ public class Report {
 
     @ManyToOne
     @JoinColumn(name = "menuitemsid", insertable = false, updatable = false)
-    private MenuItem menuItem;
+    private MenuItemEntity menuItemEntity;
 
     @ManyToOne
     @JoinColumn(name = "reportstructureid", insertable = false, updatable = false)
-    private ReportStructure reportStructure;
+    private ReportStructureEntity reportStructureEntity;
 }

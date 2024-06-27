@@ -1,6 +1,5 @@
-package com.eletra.ClientReports.model;
+package com.eletra.ClientReports.models.entities;
 
-import com.eletra.ClientReports.Enum.FilterType;
 import jakarta.persistence.*;
 import java.util.Date;
 
@@ -9,7 +8,7 @@ import java.util.Date;
 @lombok.NoArgsConstructor
 @Entity
 @Table(name = "Filter")
-public class Filter {
+public class FilterEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,5 +49,5 @@ public class Filter {
 
     @ManyToOne
     @JoinColumn(name = "ReportID", insertable = false, updatable = false)
-    private Report report;
+    private ReportEntity reportEntity;
 }

@@ -1,17 +1,14 @@
 package com.eletra.ClientReports.repository;
 
 
-import com.eletra.ClientReports.dtos.report.ReportDto;
-import com.eletra.ClientReports.model.Report;
+import com.eletra.ClientReports.models.entities.ReportEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public interface ReportRepository extends JpaRepository<Report, Integer> {
+public interface ReportRepository extends JpaRepository<ReportEntity, Integer> {
 
-    Page<Report> findByTitleContaining(String filter, Pageable pageable);
+    Page<ReportEntity> findByTitleContaining(String filter, Pageable pageable);
 }

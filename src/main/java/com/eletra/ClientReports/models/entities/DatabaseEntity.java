@@ -1,4 +1,4 @@
-package com.eletra.ClientReports.model;
+package com.eletra.ClientReports.models.entities;
 
 import jakarta.persistence.*;
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.Date;
 @lombok.NoArgsConstructor
 @Entity
 @Table(name = "Databases")
-public class Database {
+public class DatabaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

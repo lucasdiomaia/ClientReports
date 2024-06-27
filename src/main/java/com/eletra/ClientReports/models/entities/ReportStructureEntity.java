@@ -1,4 +1,4 @@
-package com.eletra.ClientReports.model;
+package com.eletra.ClientReports.models.entities;
 
 import jakarta.persistence.*;
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.Date;
 @lombok.NoArgsConstructor
 @Entity
 @Table(name = "ReportStructure")
-public class ReportStructure {
+public class ReportStructureEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,5 +37,5 @@ public class ReportStructure {
 
     @ManyToOne
     @JoinColumn(name = "DatabaseId", insertable = false, updatable = false)
-    private Database database;
+    private DatabaseEntity database;
 }

@@ -1,7 +1,7 @@
-package com.eletra.ClientReports.dtos.filter;
+package com.eletra.ClientReports.models.dtos.filter;
 
 
-import com.eletra.ClientReports.Enum.FilterType;
+import com.eletra.ClientReports.models.enums.FilterType;
 import lombok.Data;
 
 @Data

@@ -1,4 +1,4 @@
-package com.eletra.ClientReports.dtos.report;
+package com.eletra.ClientReports.models.dtos.report;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
